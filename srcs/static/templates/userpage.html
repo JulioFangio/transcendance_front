@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+    <head>
+        <title>Homepage</title>
+        <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <script type="text/javascript" src="{% static 'bootstrap.min.js' %}"></script>
+        {% include "script_pong.html" %}
+    </head>
+    <body>
+        <!-- date -->
+        <div class="container">
+            <div class="row p-5">
+                <div class="col">
+                    <h1 class="date font-weight-bold text-black" style="position: absolute; top: 10px; left: 10px; font-size: 85%; font-weight: 600;">{{ date|date:"d F Y H:i:s" }}</h1>
+                </div>
+                <div class="col">
+                    <div class="container d-flex justify-content-end" style="position: absolute; top: 10px; right: 10px;">
+                        <button class="btn btn-dark btn-md" style="background-color: black">PROFILE</button>
+                        <button class="btn btn-dark btn-md" style="background-color: black">FRIENDS</button>
+                        <button class="btn btn-dark btn-md" style="background-color: black">EXPLORER</button>
+                        <button class="btn btn-dark btn-md" style="background-color: black">LOG OUT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- insertion d un accoridon bootstrap contenant 4 volets de regles-->
+        <div class="container">
+            <div class="row">
+                <div class="accordion accordion-flush" id="accordionFlush">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Game Setup
+                        </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Pong is a two-player game. Each player controls a paddle on the screen by using the "Left" and "Right" arrow keys of the keyboard. The players' goal is to use their paddle to strike the ball back and forth.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Playing the Game
+                        </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">The ball begins in the middle of the screen, and once the game starts, the ball will move in a random direction. If a player hits the ball, it bounces back towards the other player. Points are scored when one player fails to return the ball to the other player.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Winning the Game
+                        </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">The game continues until one player reaches a score of 11 points. The player who first reaches 11 points is declared the winner. If the game is tied at 10 points, then play continues until one player has 2 points more than the other player, and that player is declared the winner.</div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+        <!-- image -->
+        <div class="container d-flex justify-content-center align-items-center mt-5">
+            <img src="{% static 'pong_mainpage_image.avif' %}" class="img-fluid w-50 border border-dark border-3 mt-5" alt="Pong Main Page">
+        </div>
+        <!-- buttons -->
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="row">
+                <div class="button_group">
+                    <button class="btn btn-dark btn-lg mt-5" style="background-color: black">PLAY</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
