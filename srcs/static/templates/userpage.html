@@ -2,7 +2,7 @@
 {% load static%}
 <html>
     <head>
-        <title>Homepage</title>
+        <title>Userpage</title>
         <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'style.css' %}">
         <script type="text/javascript" src="{% static 'bootstrap.min.js' %}"></script>
@@ -25,7 +25,31 @@
                 </div>
             </div>
         </div>
-        <!-- insertion d un accoridon bootstrap contenant 4 volets de regles-->
+        <!-- profile picture -->
+        <div class="row">
+            <div class="col" style="margin-top: 20px">
+                <img src="{% static 'neutral_avatar.jpg' %}" class="img-fluid" style="position: absolute; top: 50px; left: 10px; width: 60px; height: 60px;">
+            </div>
+        </div>
+        <!-- acordion for rules-->
+        <style>
+            .accordion-button {
+                background-color: black;
+                color: white;
+                box-shadow: none;
+                border: none;
+            }
+
+            .accordion-button:hover {
+                background-color: #333;
+            }
+
+            .accordion-button:not(.collapsed) {
+                background-color: lightgray;
+                box-shadow: none;
+                border: none;
+            }
+        </style>
         <div class="container">
             <div class="row">
                 <div class="accordion accordion-flush" id="accordionFlush">
@@ -60,6 +84,7 @@
                         </div>
                     </div>
                     </div>
+                </div>
             </div>
         </div>
         <!-- image -->
@@ -69,8 +94,8 @@
         <!-- buttons -->
         <div class="container d-flex justify-content-center align-items-center">
             <div class="row">
-                <div class="button_group">
-                    <button class="btn btn-dark btn-lg mt-5" style="background-color: black">PLAY</button>
+                <div class="button">
+                    <button class="btn btn-dark btn-lg mt-5" style="background-color: black ">PLAY</button>
                 </div>
             </div>
         </div>
