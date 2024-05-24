@@ -10,3 +10,6 @@ def userpage(request):
 # pour ensuite les inserer dans le code html grace a la syntaxe {{ nom_de_la_variable }}
 # cela sera particulierement utilse lorsqu il faudra aller chercher des variables contenues
 # dans la base de donnees pour les afficher dans la page web.
+
+def sign_up_page(request):
+    return render(request, "sign_up.html", context={"date": datetime.today()})
