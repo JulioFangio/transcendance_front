@@ -19,11 +19,15 @@ from django.urls import path
 
 from .views import homepage
 from .views import userpage
+from .views import log_in
 from .views import sign_up_page
+from .views import sign_up_form_page
 
 urlpatterns = [
     path('', homepage, name="homepage"),
     path("user/", userpage, name="userpage"),
+    path("log_in/", log_in, name="log_in"),
     path("sign_up/", sign_up_page, name="sign_up_page"),
+    path("sign_up_form/", sign_up_form_page, name="sign_up_form_page"),
     path('admin/', admin.site.urls),
 ]

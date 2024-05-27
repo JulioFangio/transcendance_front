@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+    <head>
+        <title>Log_in</title>
+        <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <script type="text/javascript" src="{% static 'bootstrap.min.js' %}"></script>
+        {% include "script_pong.html" %}
+    </head>
+    <body>
+        <!-- date -->
+        <div class="container">
+            <h1 class="date font-weight-bold text-black" style="position: absolute; top: 10px; left: 10px; font-size: 85%; font-weight: 600;">{{ date|date:"d F Y H:i:s" }}</h1>
+        </div>
+        <!-- title -->
+        <div class="container" style="margin-top: 100px;">
+            <div class="row-mt-5 justify-content-center col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <div class="col">
+                    <h3 class="font-weight-bold text-black mt-5" style="font-weight: 800;">Log in</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="row mt-5 justify-content-center">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Username" required>
+                        <div class="valid-feedback">
+                        Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Password" required>
+                        <div class="valid-feedback">
+                        Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <button class="btn btn-primary btn-lg" style="background-color: black" type="submit">Connect</button>
+                </div>
+                </div>
+            </form>
+        </div>
+        <!-- buttons -->
+        <div class="button">
+            <h5 class="justify-content-center mt-5 col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" style="font-weight: 600;">or continue with</h5>
+            <div class="container d-flex justify-content-center align-items-center">
+                <button class="btn btn-dark btn-lg mt-5" style="background-color: black">42 API</button>
+            </div>
+        </div>
+    </body>
+</html>

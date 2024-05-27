@@ -11,5 +11,11 @@ def userpage(request):
 # cela sera particulierement utilse lorsqu il faudra aller chercher des variables contenues
 # dans la base de donnees pour les afficher dans la page web.
 
+def log_in(request):
+    return render(request, "log_in.html", context={"date": datetime.today()})
+
 def sign_up_page(request):
     return render(request, "sign_up.html", context={"date": datetime.today()})
+
+def sign_up_form_page(request):
+    return render(request, "sign_up_form.html", context={"date": datetime.today()})

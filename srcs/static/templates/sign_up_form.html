@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+    <head>
+        <title>Sign_up_form</title>
+        <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <script type="text/javascript" src="{% static 'bootstrap.min.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        {% include "script_pong.html" %}
+    </head>
+    <body style="overflow-x: hidden;">
+        <!-- date -->
+        <div class="container m-5">
+            <h1 class="date font-weight-bold text-black" style="position: absolute; top: 10px; left: 10px; font-size: 85%; font-weight: 600;">{{ date|date:"d F Y H:i:s" }}</h1>
+        </div>
+        <div class="container text-center">
+            <h2 class="font-weight-bold text-black" style="font-size: 24px; font-weight: 600;">Sign up</h2>
+        </div>
+        <!-- form -->
+        <div class="row">
+            <div class="col-6 p-5">
+                <div class="container m-5">
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"></span>
+                            <input type="text" class="form-control" placeholder="First name" aria-label="F_name" aria-describedby="basic-addon1">
+                            <span class="input-group-text" id="basic-addon1"></span>
+                            <input type="text" class="form-control" placeholder="Last name" aria-label="L_name" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"></span>
+                            <input type="text" class="form-control" placeholder="Email adress (user@example.com)" aria-label="E_mail" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+
+                    <div>
+                        <h6 class="font-weight-bold text-black mt-5" style="font-size: 85%; font-weight: 300;">Please note that your username is how other players will see you so please select an appropriate one.</h6>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"></span>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="U_name" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"></span>
+                                <input type="text" class="form-control" placeholder="Password" aria-label="Pass" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="Password confirm" aria-label="Pass_conf" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group">
+                            <h6 class="font-weight-bold text-black mt-5" style="font-size: 85%; font-weight: 300;">Add a short description about yourself *(optional).</h6>
+                        </div>
+                        <div class="input-group">
+                            <textarea class="form-control" placeholder="Ex : Hey I love playing Pong" aria-label="Ex_des" aria-label="With textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--avatar picture-->
+            <div class="col-6 p-5">
+                <div class="container m-5">
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <div class="row justify-content-center">
+                                <img id="avatarImage" src="{% static 'neutral_avatar.jpg' %}" class="img-fluid" style="max-width: 100%; height: auto; margin-left: -50px;">
+                            </div>
+                            <!-- ajouter la fonction script changeAvatar une variable currentAvatar et un fonction getAvatar pour display le bon-->
+                                <div class="dropdown">
+                                    <div class="row justify-content-center">
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle me-5" style="background-color : black;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Select an avatar
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <button class="dropdown-item btn-sm" type="button" onclick="changeAvatar('{% static 'avatars/shark.png' %}')">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="{% static 'avatars/shark.png' %}" class="dropdown-item-image" style="max-width: 20%; height: 20%;">
+                                                    <span class="ms-2">Shark</span>
+                                                </div>
+                                            </button>
+                                            <button class="dropdown-item btn-sm" type="button" onclick="changeAvatar('{% static 'avatars/gorilla.png' %}')">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="{% static 'avatars/gorilla.png' %}" class="dropdown-item-image" style="max-width: 20%; height: 20%;">
+                                                    <span class="ms-2">Gorilla</span>
+                                                </div>
+                                            </button>
+                                            <button class="dropdown-item btn-sm" type="button" onclick="changeAvatar('{% static 'avatars/duck.png' %}')">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="{% static 'avatars/duck.png' %}" class="dropdown-item-image" style="max-width: 20%; height: 20%;">
+                                                    <span class="ms-2">Duck</span>
+                                                </div>
+                                            </button>
+                                            <button class="dropdown-item btn-sm" type="button" onclick="changeAvatar('{% static 'avatars/hippopotamus.png' %}')">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="{% static 'avatars/hippopotamus.png' %}" class="dropdown-item-image" style="max-width: 20%; height: 20%;">
+                                                    <span class="ms-2">Hippopotamus</span>
+                                                </div>
+                                            </button>
+                                            <button class="dropdown-item btn-sm" type="button" onclick="changeAvatar('{% static 'avatars/rabbit.png' %}')">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="{% static 'avatars/rabbit.png' %}" class="dropdown-item-image" style="max-width: 20%; height: 20%;">
+                                                    <span class="ms-2">Rabbit</span>
+                                                </div>
+                                            </button>
+                                            <button class="dropdown-item btn-sm" type="button" onclick="changeAvatar('{% static 'avatars/sea-lion.png' %}')">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="{% static 'avatars/sea-lion.png' %}" class="dropdown-item-image" style="max-width: 20%; height: 20%;">
+                                                    <span class="ms-2">Sea Lion</span>
+                                                </div>
+                                            </button>
+                                            <button class="dropdown-item btn-sm" type="button" onclick="changeAvatar('{% static 'avatars/cat.png' %}')">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="{% static 'avatars/cat.png' %}" class="dropdown-item-image" style="max-width: 20%; height: 20%;">
+                                                    <span class="ms-2">Cat</span>
+                                                </div>
+                                            </button>
+                                        </ul>
+                                    </div>
+                                    <!-- changeavatar()-->
+                                    <script>
+                                        function changeAvatar(avatarUrl) {
+                                            // Code to change the avatar image
+                                            var avatarImage = document.getElementById("avatarImage");
+                                            avatarImage.src = avatarUrl;
+                                        }
+                                    </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center mt-5">
+            <button class="btn btn-dark btn-lg" style="background-color: black">Submit</button>
+        </div>
+    </body>
+
+    {% comment %} <div class="dropdown">
+        <button class="btn bg-transparency text-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Authors</button>
+        <ul class="dropdown-menu bg-dark shadow">
+            <li><a class="dropdown-item text-dark" href="https://profile.intra.42.fr/users/alibourb" target="_blank"><span><img src="../static/images/alibourb.jpg" alt="alibourb photo" class="rounded mx-2" style="height: 30px;"></span>alibourb</a></li>
+            <li><a class="dropdown-item text-dark" href="https://profile.intra.42.fr/users/bfiguet" target="_blank"><span><img src="../static/images/bfiguet.jpg" alt="bfiguet photo" class="rounded mx-2" style="height: 30px;"></span>bfiguet</a></li>
+            <li><a class="dropdown-item text-dark" href="https://profile.intra.42.fr/users/ekadiri" target="_blank"><span><img src="../static/images/ekadiri.jpg" alt="ekadiri photo" class="rounded mx-2" style="height: 30px;"></span>ekadiri</a></li>
+            <li><a class="dropdown-item text-dark" href="https://profile.intra.42.fr/users/jarthaud" target="_blank"><span><img src="../static/images/jarthaud.jpg" alt="jarthaud photo" class="rounded mx-2" style="height: 30px;"></span>jarthaud</a></li>
+            <li><a class="dropdown-item text-dark" href="https://profile.intra.42.fr/users/syakovle" target="_blank"><span><img src="../static/images/syakovle.jpg" alt="syakovle photo" class="rounded mx-2" style="height: 30px;"></span>jsyakovle</a></li>
+        </ul>
+    </div> {% endcomment %}
+
+                                                {% comment %} <button class="dropdown-item" type="button" onclick="changeAvatar('{% static 'avatars/shark.png' %}')">
+                                                    <img src="{% static 'avatars/shark.png' %}" class="dropdown-item-image">
+                                                </button>
+                                                </button>
+                                                <button class="dropdown-item" type="button" onclick="changeAvatar('{% static 'avatars/gorilla.png' %}')">
+                                                    <img src="{% static 'avatars/gorilla.png' %}" class="dropdown-item-image">
+                                                </button>
+                                                <button class="dropdown-item" type="button" onclick="changeAvatar('{% static 'avatars/duck.png' %}')">
+                                                    <img src="{% static 'avatars/duck.png' %}" class="dropdown-item-image">
+                                                </button> {% endcomment %}
